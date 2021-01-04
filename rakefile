@@ -1,0 +1,15 @@
+require_relative 'config/environment'
+require 'sinatra/activerecord/rake'
+
+desc 'starts a console'
+task :console do
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+  Pry.start
+end
+
+# desc "hello" #if i type rake hello in terminal it will print the msg howdy for me. and if i want to see it on rake, i just put rake -T and the rake hello command is there too.
+
+
+# task :hello do 
+#     puts "HOWDY"
+# end
